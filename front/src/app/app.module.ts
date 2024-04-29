@@ -8,6 +8,8 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { CompanyModule } from "./company/company.module";
 import { HomeModule } from "./home/home.module";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent ],
@@ -18,8 +20,11 @@ import { HomeModule } from "./home/home.module";
     CompanyModule,
     HomeModule,
     AppRoutingModule,
+    MatSlideToggleModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
