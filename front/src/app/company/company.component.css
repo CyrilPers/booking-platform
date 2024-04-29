@@ -1,40 +1,39 @@
 .company {
-display: flex;
-box-sizing: border-box;
-padding: 20px 20%;
-gap: 10px;
+    display: flex;
+    box-sizing: border-box;
+    padding: 20px 20%;
+    gap: 10px;
 }
 
 .company-picture {
-width: 100%;
-border-radius: 10px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 .address{
 }
 
 .left {
-width: 70%
+    width: 70%
 }
 
 .right {
-width: 30%
-}
+    width: 30%}
 
 .column {
-display: flex;
-flex-direction: column;
-gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .block-right {
-border-radius: 10px;
-box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-display: flex;
-box-sizing: border-box;
-width: 100%;
-flex-direction: column;
-align-items: flex-start;
-padding: 10px;
-padding-left: 20px;
+    border-radius: 10px;
+    box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    padding-left: 20px;
 }
