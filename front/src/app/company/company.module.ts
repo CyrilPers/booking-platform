@@ -4,7 +4,6 @@ import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { CompanyComponent } from "./company.component";
 import { CompanyNavBarComponent } from "./company-nav-bar/company-nav-bar.component";
-import { CompanyServicesComponent } from './company-services/company-services.component';
 
 const companyRoutes: Routes = [
   { path: "company", component: CompanyComponent },
@@ -14,7 +13,6 @@ const companyRoutes: Routes = [
   declarations: [
     CompanyNavBarComponent,
     CompanyComponent,
-    CompanyServicesComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(companyRoutes)],
   providers: [],
