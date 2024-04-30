@@ -10,9 +10,10 @@ import { CompanyModule } from "./company/company.module";
 import { HomeModule } from "./home/home.module";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { FooterComponent } from './reusable/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent ],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [
     BrowserModule,
     FormsModule,
