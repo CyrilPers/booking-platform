@@ -13,7 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FooterComponent } from './reusable/footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PageNotFoundComponent, FooterComponent],
   imports: [
     BrowserModule,
     FormsModule,
