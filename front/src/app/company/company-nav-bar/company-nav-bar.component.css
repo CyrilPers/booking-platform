@@ -1,0 +1,9 @@
+.nav-company {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background: grey;
+padding: 5px 20%;
+}
