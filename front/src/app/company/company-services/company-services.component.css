@@ -1,2 +1,30 @@
+.services {
+flex-direction: row;
+width: 100%;
+align-items: center;
+}
+
 .service {
+display: flex;
+flex-direction: column;
+}
+
+.service-left {
+width: 70%
+}
+
+.service-right {
+width: 30%;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+}
+
+.service-name-time {
+display: flex;
+flex-direction: row;
+}
+
+hr{
+border: 1px solid gainsboro;
 }
