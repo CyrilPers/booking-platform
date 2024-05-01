@@ -5,6 +5,7 @@ import { FormsModule } from "@angular/forms";
 import { CompanyComponent } from "./company.component";
 import { CompanyServicesComponent } from "./company-services/company-services.component";
 import { CarouselComponent } from "../reusable/carousel/carousel.component";
+import { ReviewsComponent } from './reviews/reviews.component';
 
 const companyRoutes: Routes = [
   { path: "company", component: CompanyComponent },
@@ -15,6 +16,7 @@ const companyRoutes: Routes = [
     CarouselComponent,
     CompanyServicesComponent,
     CompanyComponent,
+    ReviewsComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(companyRoutes)],
   providers: [],
