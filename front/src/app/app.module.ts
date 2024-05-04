@@ -8,12 +8,12 @@ import { HttpClientModule } from "@angular/common/http";
 import { CompanyModule } from "./company/company.module";
 import { HomeModule } from "./home/home.module";
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FooterComponent } from './footer/footer.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ButtonComponent } from './reusable/button/button.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent, FooterComponent, NavBarComponent],
+  declarations: [AppComponent, PageNotFoundComponent, FooterComponent, NavBarComponent, ButtonComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -21,8 +21,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     CompanyModule,
     HomeModule,
     AppRoutingModule,
-    MatSlideToggleModule,
   ],
+  exports: [ButtonComponent],
   providers: [
     provideAnimationsAsync()
   ],

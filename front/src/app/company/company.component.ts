@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl  } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-company',
@@ -6,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./company.component.css']
 })
 export class CompanyComponent {
+
     images = [
         {
           imageSrc:
@@ -17,5 +19,8 @@ export class CompanyComponent {
             'https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80',
           imageAlt: 'nature2',
         },
-    ]
+    ];
+
+    constructor() {}
+
 }

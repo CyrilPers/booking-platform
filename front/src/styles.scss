@@ -1,9 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1, h2, h3, h4 {
+    font-family: "Lobster", sans-serif;
+    font-style: normal;
+}
+
+h1 {
+   font-size: 2rem;
+}
+h2{
+    font-size: 1.8rem;
+}
+
+h3{
+    font-size: 1.2rem;
+}
+
+h4{
+
+}
 
 .card {
 display: flex;
@@ -13,7 +34,7 @@ border-radius: 10px;
 
 .block-top {
 border-radius: 10px 10px 0 0 ;
-background-color: gainsboro;
+background-color: rgb(233, 233, 233);
 }
 
 .block-bottom {

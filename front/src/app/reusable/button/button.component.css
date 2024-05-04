@@ -1,0 +1,30 @@
+.custom-button {
+    display: inline-block;
+    padding: 8px 30px;
+    margin: 4px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid black;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .custom-button .overlay {
+    width: 64px;
+    height: 0;
+    transition: all 0.3s;
+    transform-origin: center;
+    transform: rotate(45deg) translateX(-20px);
+    background-color: black;
+    top: 50%;
+  }
+  
+  .custom-button:hover .overlay {
+    height: 64px;
+    transform: rotate(45deg) translateX(-20px) translateY(-32px);
+  }
+  
+  .custom-button:hover span {
+    color: #fff;
+  }

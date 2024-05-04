@@ -2,11 +2,23 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "page-404",
+  styles: [`
+  .not-found-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+  h1{
+    margin-bottom:20px;
+  }
+`],
   template: `
-    <div class="center">
+    <div class="not-found-page">
       <h1>Hey, cette page n'existe pas !</h1>
       <a routerLink="">
-        Retourner à l' accueil
+        Retourner à l'accueil
       </a>
     </div>
   `,

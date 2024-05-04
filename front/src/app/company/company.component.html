@@ -1,61 +1,58 @@
 <h1 class="title">MonEntreprise</h1>
-    <div class="company">
-    <div class="column left">
-        <app-carousel [images]="images"></app-carousel>
-        <h2>Prestations</h2>
-        <app-company-services></app-company-services>
+<div class="company">
+  <div class="column left">
+    <app-carousel [images]="images"></app-carousel>
+    <h2>Prestations</h2>
+    <app-company-services></app-company-services>
+  </div>
+  <div class="column right">
+    <app-reviews></app-reviews>
+
+    <div class="card adresse">
+      <div class="block block-top">
+        <h3 class="sub-title">Nom entreprise</h3>
+      </div>
+      <div class="block block-bottom">
+        <span>numéro rue, rue</span>
+        <span>complément adresse</span>
+        <span>Code postale, ville</span>
+      </div>
     </div>
-    <div class="column right">
 
-        <app-reviews></app-reviews>
-
-        <div class="card adresse">
-            <div class="block block-top">
-                <h2 class="sub-title">Nom entreprise</h2>
-            </div>
-            <div class="block block-bottom">
-                <h2>numéro rue, rue</h2>
-                <h2>complément adresse</h2>
-                <h2>Code postale, ville</h2>
-
-            </div>
-        </div>
-
-        <div class="card about">
-            <div class="block block-top">
-                <div class="sub-title">
-                    <h2>A propos de nous</h2>
-                </div>
-            </div>
-            <div class="block block-bottom">
-                <p>L'entreprise monEntreprise propose des services de ......</p>
-            </div>
-        </div>
-
-        <div class="card store-hours">
-            <div class="block block-top">
-                <h2 class="sub-title">Nos horaires</h2>
-            </div>
-            <div class="block block-bottom">
-                <p>Lundi: 8h-19h</p>
-                <p>Mardi: 8h-19h</p>
-                <p>Mercredi: 8h-19h</p>
-                <p>Jeudi: 8h-19h</p>
-                <p>Vendredi: 8h-19h</p>
-                <p>Samedi: 8h-19h</p>
-                <p>Dimanche: 8h-19h</p>
-            </div>
-        </div>
-
-        <div class="card contact">
-            <div class="block block-top">
-                <h2 class="sub-title">Nous contacter</h2>
-            </div>
-            <div class="block block-bottom">
-                <p>04.00.00.00.00</p>
-                <p>contactmonEntreprise.fr</p>
-            </div>
-        </div>
-        
+    <div class="card store-hours">
+      <div class="block block-top">
+        <h3 class="sub-title">Nos horaires</h3>
+      </div>
+      <div class="block block-bottom">
+        <span>Lundi: 8h-19h</span>
+        <span>Mardi: 8h-19h</span>
+        <span>Mercredi: 8h-19h</span>
+        <span>Jeudi: 8h-19h</span>
+        <span>Vendredi: 8h-19h</span>
+        <span>Samedi: 8h-19h</span>
+        <span>Dimanche: 8h-19h</span>
+      </div>
     </div>
+
+    <div class="card about">
+      <div class="block block-top">
+        <div class="sub-title">
+          <h3>A propos de nous</h3>
+        </div>
+      </div>
+      <div class="block block-bottom">
+        <p>L'entreprise monEntreprise propose des services de ......</p>
+      </div>
+    </div>
+
+    <div class="card contact">
+      <div class="block block-top">
+        <h3 class="sub-title">Nous contacter</h3>
+      </div>
+      <div class="block block-bottom">
+        <p>04.00.00.00.00</p>
+        <p>contactmonEntreprise.fr</p>
+      </div>
+    </div>
+  </div>
 </div>
