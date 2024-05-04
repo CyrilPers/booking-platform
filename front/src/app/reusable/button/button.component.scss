@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   border: none;
-  background-color: white;
   border: 1px solid #d2d6dc;
   border-radius: 0.375rem;
   outline: none;
@@ -11,13 +10,31 @@
   transition: 0.2s ease all;
 }
 
-.custom-btn:hover {
-  background-color: #f7fafc;
-  border-color: rgb(174, 186, 201); 
+.white-btn {
+  background-color: white;
+  color: black;
+  &:focus {
+    background-color: #f7fafc;
+    border-color: rgb(174, 186, 201); 
+  }
+  &:active {
+    color: white;
+    background-color: gray; 
+    border-color: #8c99a9; 
+  }
 }
 
-.custom-btn:active {
+.black-btn {
+  background-color: black;
+  border: 1px solid gray;
   color: white;
-  background-color: gray; 
-  border-color: #8c99a9; 
+  &:hover {
+    background-color: rgb(31, 31, 31);
+    border-color: rgb(174, 186, 201); 
+  }
+  &:active {
+    color: black;
+    background-color: white; 
+    border-color: #8c99a9; 
+  }
 }

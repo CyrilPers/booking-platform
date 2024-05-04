@@ -10,4 +10,5 @@ export class ButtonComponent {
     @Input() label: String = "Bouton"
     @Input() fontSize: String = "14px"
     @Input() padding: String = "0.5rem 1rem"
+    @Input() class: String = "white-btn"
 }

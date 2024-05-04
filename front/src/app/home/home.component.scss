@@ -3,5 +3,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
+}
+
+.all-services {
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    a {
+        transition: 0.2s ease all;
+        &:hover{
+            scale: 1.15; 
+        }
+        &:focus{
+            scale: 1; 
+            color: gray;
+        }
+    }
+
 }
