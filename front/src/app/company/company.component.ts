@@ -7,7 +7,7 @@ import { CollaboraterComponent } from './collaborater/collaborater.component';
 @Component({
     selector: 'app-company',
     templateUrl: './company.component.html',
-    styleUrls: ['./company.component.css'],
+    styleUrls: ['./company.component.scss'],
     standalone: true,
     imports: [CarouselComponent, CompanyServicesComponent, ReviewsComponent, CollaboraterComponent]
 })

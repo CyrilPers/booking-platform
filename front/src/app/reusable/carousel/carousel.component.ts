@@ -9,7 +9,7 @@ imageAlt: string;
 @Component({
     selector: 'app-carousel',
     templateUrl: './carousel.component.html',
-    styleUrl: './carousel.component.css',
+    styleUrl: './carousel.component.scss',
     standalone: true,
     imports: [NgIf, NgFor, NgClass]
 })

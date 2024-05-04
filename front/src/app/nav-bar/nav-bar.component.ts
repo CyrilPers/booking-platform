@@ -4,7 +4,7 @@ import { ButtonComponent } from '../reusable/button/button.component';
 @Component({
     selector: 'app-nav-bar',
     templateUrl: './nav-bar.component.html',
-    styleUrl: './nav-bar.component.css',
+    styleUrl: './nav-bar.component.scss',
     standalone: true,
     imports:[ButtonComponent],
 })
