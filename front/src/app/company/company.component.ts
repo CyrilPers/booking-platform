@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CompanyServicesComponent } from './company-services/company-services.component';
 import { CarouselComponent } from '../reusable/carousel/carousel.component';
+import { CollaboraterComponent } from './collaborater/collaborater.component';
 
 @Component({
     selector: 'app-company',
     templateUrl: './company.component.html',
     styleUrls: ['./company.component.css'],
     standalone: true,
-    imports: [CarouselComponent, CompanyServicesComponent, ReviewsComponent]
+    imports: [CarouselComponent, CompanyServicesComponent, ReviewsComponent, CollaboraterComponent]
 })
 export class CompanyComponent {
 
