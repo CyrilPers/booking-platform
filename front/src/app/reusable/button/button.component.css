@@ -1,30 +1,24 @@
-.custom-button {
-    display: inline-block;
-    padding: 8px 30px;
-    margin: 4px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    border: 1px solid black;
-    color: black;
-    text-decoration: none;
-  }
-  
-  .custom-button .overlay {
-    width: 64px;
-    height: 0;
-    transition: all 0.3s;
-    transform-origin: center;
-    transform: rotate(45deg) translateX(-20px);
-    background-color: black;
-    top: 50%;
-  }
-  
-  .custom-button:hover .overlay {
-    height: 64px;
-    transform: rotate(45deg) translateX(-20px) translateY(-32px);
-  }
-  
-  .custom-button:hover span {
-    color: #fff;
-  }
+.custom-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: white;
+  border: 1px solid #d2d6dc;
+  border-radius: 0.375rem;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  transition: 0.2s ease all;
+}
+
+.custom-btn:hover {
+  background-color: #f7fafc;
+  border-color: rgb(174, 186, 201); 
+}
+
+.custom-btn:active {
+  color: white;
+  background-color: gray; 
+  border-color: #8c99a9; 
+}

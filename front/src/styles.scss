@@ -22,25 +22,18 @@ h3{
     font-size: 1.2rem;
 }
 
-h4{
-
-}
-
 .card {
 display: flex;
 flex-direction: column;
-border-radius: 10px;
+border-radius: 10px 10px 10px 10px;
+box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
 }
 
-.block-top {
+.block-title {
 border-radius: 10px 10px 0 0 ;
 background-color: rgb(233, 233, 233);
 }
 
-.block-bottom {
-border-radius: 10px 10px 10px 10px;
-box-shadow: -8px 8px 20px 0px rgb(0 0 0 / 20%);
-}
 
 .block {
 display: flex;

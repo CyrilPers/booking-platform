@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgIf, NgFor, NgClass } from '@angular/common';
 
 interface carouselImage {
 imageSrc: string;
@@ -6,9 +7,11 @@ imageAlt: string;
 }
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.css'
+    selector: 'app-carousel',
+    templateUrl: './carousel.component.html',
+    styleUrl: './carousel.component.css',
+    standalone: true,
+    imports: [NgIf, NgFor, NgClass]
 })
 export class CarouselComponent implements OnInit {
     @Input() images: carouselImage[] = []

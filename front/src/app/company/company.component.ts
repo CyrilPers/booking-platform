@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl  } from '@angular/platform-browser';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { CompanyServicesComponent } from './company-services/company-services.component';
+import { CarouselComponent } from '../reusable/carousel/carousel.component';
 
 @Component({
-  selector: 'app-company',
-  templateUrl: './company.component.html',
-  styleUrls: ['./company.component.css']
+    selector: 'app-company',
+    templateUrl: './company.component.html',
+    styleUrls: ['./company.component.css'],
+    standalone: true,
+    imports: [CarouselComponent, CompanyServicesComponent, ReviewsComponent]
 })
 export class CompanyComponent {
 

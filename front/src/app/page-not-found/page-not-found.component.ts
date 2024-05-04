@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: "page-404",
-  styles: [`
+    selector: "page-404",
+    styles: [`
   .not-found-page {
     display: flex;
     flex-direction: column;
@@ -14,7 +15,7 @@ import { Component } from "@angular/core";
     margin-bottom:20px;
   }
 `],
-  template: `
+    template: `
     <div class="not-found-page">
       <h1>Hey, cette page n'existe pas !</h1>
       <a routerLink="">
@@ -22,5 +23,7 @@ import { Component } from "@angular/core";
       </a>
     </div>
   `,
+    standalone: true,
+    imports: [RouterLink],
 })
 export class PageNotFoundComponent {}
