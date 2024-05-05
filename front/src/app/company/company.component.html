@@ -2,6 +2,14 @@
 <div class="company">
   <div class="column left">
     <app-carousel [images]="images"></app-carousel>
+    <div class="card collabs">
+      <div class="block block-title">
+        <h3>Collaborateurs</h3>
+      </div>
+      <div class="block">
+        <app-collaborater collabName="Mathieu"></app-collaborater>
+      </div>
+    </div>
     <h2>Prestations</h2>
     <app-company-services></app-company-services>
   </div>
@@ -30,16 +38,6 @@
         <span>Vendredi: 8h-19h</span>
         <span>Samedi: 8h-19h</span>
         <span>Dimanche: 8h-19h</span>
-      </div>
-    </div>
-
-    <div class="card collabs">
-      <div class="block block-title">
-        <h3>Collaborateurs</h3>
-      </div>
-      <div class="block">
-        <app-collaborater collabName="Mathieu"></app-collaborater>
-        
       </div>
     </div>
 
