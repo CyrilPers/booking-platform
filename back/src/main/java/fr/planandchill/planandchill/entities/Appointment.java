@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "appointment")
@@ -34,6 +36,31 @@ public class Appointment {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_apppointment_state", nullable = false)
     private AppointmentState idApppointmentState;
+
+    @ManyToMany
+    @JoinTable(name = "contains",
+            joinColumns = @JoinColumn(name = "id_appointment"),
+            inverseJoinColumns = @JoinColumn(name = "id_service"))
+    private Set<Service> services = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idAppointment")
+    private Set<Payment> payments = new LinkedHashSet<>();
+
+    public Set<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(Set<Payment> payments) {
+        this.payments = payments;
+    }
+
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
+    }
 
     public Integer getId() {
         return id;

@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "company")
 public class Company {
@@ -31,6 +34,61 @@ public class Company {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_address", nullable = false)
     private Address idAddress;
+
+    @OneToMany(mappedBy = "idCompany")
+    private Set<Category> categories = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idCompany")
+    private Set<Image> images = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idCompany")
+    private Set<Planning> plannings = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idCompany")
+    private Set<Subscribe> subscribes = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "idCompany")
+    private Set<Worker> workers = new LinkedHashSet<>();
+
+    public Set<Worker> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(Set<Worker> workers) {
+        this.workers = workers;
+    }
+
+    public Set<Subscribe> getSubscribes() {
+        return subscribes;
+    }
+
+    public void setSubscribes(Set<Subscribe> subscribes) {
+        this.subscribes = subscribes;
+    }
+
+    public Set<Planning> getPlannings() {
+        return plannings;
+    }
+
+    public void setPlannings(Set<Planning> plannings) {
+        this.plannings = plannings;
+    }
+
+    public Set<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Set<Image> images) {
+        this.images = images;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
 
     public String getIdCompany() {
         return idCompany;

@@ -7,9 +7,9 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "subscribe")
-public class MembershipCompany {
+public class Subscribe {
     @EmbeddedId
-    private MembershipCompanyId id;
+    private SubscribeId id;
 
     @MapsId("idCompany")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -28,11 +28,11 @@ public class MembershipCompany {
     @Column(name = "date_end")
     private Instant dateEnd;
 
-    public MembershipCompanyId getId() {
+    public SubscribeId getId() {
         return id;
     }
 
-    public void setId(MembershipCompanyId id) {
+    public void setId(SubscribeId id) {
         this.id = id;
     }
 

@@ -10,8 +10,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Embeddable
-public class MembershipCompanyId implements Serializable {
-    private static final long serialVersionUID = -4955628595740721985L;
+public class SubscribeId implements Serializable {
+    private static final long serialVersionUID = 6578597227124397665L;
     @Size(max = 50)
     @NotNull
     @Column(name = "id_company", nullable = false, length = 50)
@@ -41,7 +41,7 @@ public class MembershipCompanyId implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        MembershipCompanyId entity = (MembershipCompanyId) o;
+        SubscribeId entity = (SubscribeId) o;
         return Objects.equals(this.idMembership, entity.idMembership) &&
                 Objects.equals(this.idCompany, entity.idCompany);
     }

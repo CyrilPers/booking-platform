@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "category")
 public class Category {
@@ -25,6 +28,17 @@ public class Category {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_service_type", nullable = false)
     private TypeService idServiceType;
+
+    @OneToMany(mappedBy = "idCategory")
+    private Set<Service> services = new LinkedHashSet<>();
+
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
+    }
 
     public Integer getId() {
         return id;

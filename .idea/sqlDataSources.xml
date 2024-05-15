@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="b86f4b25-636f-442d-a97d-d984f4470121" name="planandchill@localhost Mapping">
+      <data-sources db="cb43036a-70ab-4f0e-97e3-110031e9a379" />
+      <scope>
+        <node kind="schema" qname="planandchill" />
+      </scope>
+    </mapping>
+  </component>
+</project>

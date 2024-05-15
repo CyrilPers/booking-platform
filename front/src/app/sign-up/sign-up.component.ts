@@ -19,18 +19,17 @@ export class SignUpComponent {
   }
   
   onSubmit = ():void => {
+    console.log("submit")
     this.formSubmitted = true;
-    this.checkPassword()
+    this.checkPassword();
   }
 
-  checkPassword = () => {
-
+  checkPassword = ():void => {
+    this.passwordErrors = []
     if (this.signInForm.value.password) {
       this.passwordErrors = checkForm(this.signInForm.value.password)
     } else {
-      this.passwordErrors.push('Veuillez choisir un mot de passe')
+      this.passwordErrors.push('Veuillez entrer un mot de passe')
     }
   }
-
-
 }

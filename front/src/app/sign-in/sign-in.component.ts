@@ -2,11 +2,12 @@ import { Component, ViewChild } from '@angular/core';
 import { ButtonComponent } from '../reusable/button/button.component';
 import { FormsModule, NgForm} from '@angular/forms';
 import { checkForm } from '../utils/checkPassword';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
   standalone: true,
-  imports: [ButtonComponent, FormsModule],
+  imports: [ButtonComponent, FormsModule, RouterLink],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css',
 })

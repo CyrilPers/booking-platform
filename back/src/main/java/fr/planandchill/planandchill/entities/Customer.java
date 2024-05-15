@@ -3,6 +3,9 @@ package fr.planandchill.planandchill.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -18,6 +21,17 @@ public class Customer {
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_user", nullable = false)
     private User idUser;
+
+    @OneToMany(mappedBy = "idCustomer")
+    private Set<Appointment> appointments = new LinkedHashSet<>();
+
+    public Set<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(Set<Appointment> appointments) {
+        this.appointments = appointments;
+    }
 
     public Integer getId() {
         return id;
