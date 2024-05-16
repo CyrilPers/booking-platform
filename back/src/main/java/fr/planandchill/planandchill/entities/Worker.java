@@ -19,17 +19,18 @@ public class Worker {
     private Company idCompany;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_permissions_level", nullable = false)
-    private PermissionsLevel idPermissionsLevel;
-
-    @NotNull
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_user", nullable = false)
     private User idUser;
 
     @OneToMany(mappedBy = "idWorker")
     private Set<Appointment> appointments = new LinkedHashSet<>();
+
+    @ManyToMany
+    @JoinTable(name = "asso_28",
+            joinColumns = @JoinColumn(name = "id_worker"),
+            inverseJoinColumns = @JoinColumn(name = "id_permissions_level"))
+    private Set<PermissionsLevel> permissionsLevels = new LinkedHashSet<>();
 
     @ManyToMany
     @JoinTable(name = "does",
@@ -56,6 +57,14 @@ public class Worker {
         this.services = services;
     }
 
+    public Set<PermissionsLevel> getPermissionsLevels() {
+        return permissionsLevels;
+    }
+
+    public void setPermissionsLevels(Set<PermissionsLevel> permissionsLevels) {
+        this.permissionsLevels = permissionsLevels;
+    }
+
     public Set<Appointment> getAppointments() {
         return appointments;
     }
@@ -78,14 +87,6 @@ public class Worker {
 
     public void setIdCompany(Company idCompany) {
         this.idCompany = idCompany;
-    }
-
-    public PermissionsLevel getIdPermissionsLevel() {
-        return idPermissionsLevel;
-    }
-
-    public void setIdPermissionsLevel(PermissionsLevel idPermissionsLevel) {
-        this.idPermissionsLevel = idPermissionsLevel;
     }
 
     public User getIdUser() {

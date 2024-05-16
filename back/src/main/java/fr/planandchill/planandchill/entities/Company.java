@@ -30,6 +30,10 @@ public class Company {
     @Column(name = "text_message_balance")
     private Integer textMessageBalance;
 
+    @Size(max = 50)
+    @Column(name = "adminLink", length = 50)
+    private String adminLink;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_address", nullable = false)
@@ -128,6 +132,14 @@ public class Company {
 
     public void setTextMessageBalance(Integer textMessageBalance) {
         this.textMessageBalance = textMessageBalance;
+    }
+
+    public String getAdminLink() {
+        return adminLink;
+    }
+
+    public void setAdminLink(String adminLink) {
+        this.adminLink = adminLink;
     }
 
     public Address getIdAddress() {

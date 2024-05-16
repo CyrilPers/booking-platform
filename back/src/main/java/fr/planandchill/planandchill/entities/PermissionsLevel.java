@@ -19,7 +19,10 @@ public class PermissionsLevel {
     @Column(name = "label", nullable = false, length = 50)
     private String label;
 
-    @OneToMany(mappedBy = "idPermissionsLevel")
+    @ManyToMany
+    @JoinTable(name = "asso_28",
+            joinColumns = @JoinColumn(name = "id_permissions_level"),
+            inverseJoinColumns = @JoinColumn(name = "id_worker"))
     private Set<Worker> workers = new LinkedHashSet<>();
 
     public Set<Worker> getWorkers() {

@@ -34,6 +34,11 @@ public class Service {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "taux", nullable = false)
+    private Tva taux;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_category", nullable = false)
     private Category idCategory;
 
@@ -103,6 +108,14 @@ public class Service {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Tva getTaux() {
+        return taux;
+    }
+
+    public void setTaux(Tva taux) {
+        this.taux = taux;
     }
 
     public Category getIdCategory() {
