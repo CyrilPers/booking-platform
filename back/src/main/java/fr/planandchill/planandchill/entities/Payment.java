@@ -26,28 +26,6 @@ public class Payment {
     @JoinColumn(name = "id_payment_type", nullable = false)
     private PaymentType idPaymentType;
 
-    @OneToOne(mappedBy = "idPayment")
-    private Invoice invoice;
-
-    @OneToOne(mappedBy = "idPayment")
-    private Membership membership;
-
-    public Membership getMembership() {
-        return membership;
-    }
-
-    public void setMembership(Membership membership) {
-        this.membership = membership;
-    }
-
-    public Invoice getInvoice() {
-        return invoice;
-    }
-
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
-    }
-
     public Integer getId() {
         return id;
     }

@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "county")
 public class County {
@@ -26,17 +23,6 @@ public class County {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "insee_region", nullable = false)
     private Region inseeRegion;
-
-    @OneToMany(mappedBy = "inseeCounty")
-    private Set<City> cities = new LinkedHashSet<>();
-
-    public Set<City> getCities() {
-        return cities;
-    }
-
-    public void setCities(Set<City> cities) {
-        this.cities = cities;
-    }
 
     public Integer getId() {
         return id;

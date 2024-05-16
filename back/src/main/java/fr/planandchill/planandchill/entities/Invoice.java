@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
 import java.time.Instant;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "invoice")
@@ -22,17 +20,6 @@ public class Invoice {
     @OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_payment", nullable = false)
     private Payment idPayment;
-
-    @OneToMany(mappedBy = "idInvoice")
-    private Set<InvoiceLine> invoiceLines = new LinkedHashSet<>();
-
-    public Set<InvoiceLine> getInvoiceLines() {
-        return invoiceLines;
-    }
-
-    public void setInvoiceLines(Set<InvoiceLine> invoiceLines) {
-        this.invoiceLines = invoiceLines;
-    }
 
     public Integer getId() {
         return id;

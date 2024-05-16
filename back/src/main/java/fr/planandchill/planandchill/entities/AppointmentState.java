@@ -1,11 +1,11 @@
 package fr.planandchill.planandchill.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "appointment_state")
@@ -18,17 +18,6 @@ public class AppointmentState {
     @NotNull
     @Column(name = "label", nullable = false, length = 50)
     private String label;
-
-    @OneToMany(mappedBy = "idApppointmentState")
-    private Set<Appointment> appointments = new LinkedHashSet<>();
-
-    public Set<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(Set<Appointment> appointments) {
-        this.appointments = appointments;
-    }
 
     public Integer getId() {
         return id;

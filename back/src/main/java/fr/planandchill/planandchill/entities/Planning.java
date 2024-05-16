@@ -27,8 +27,8 @@ public class Planning {
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "id_worker", nullable = false)
-    private Worker idWorker;
+    @JoinColumn(name = "id_user", nullable = false)
+    private Worker idUser;
 
     public Integer getId() {
         return id;
@@ -62,12 +62,12 @@ public class Planning {
         this.idCompany = idCompany;
     }
 
-    public Worker getIdWorker() {
-        return idWorker;
+    public Worker getIdUser() {
+        return idUser;
     }
 
-    public void setIdWorker(Worker idWorker) {
-        this.idWorker = idWorker;
+    public void setIdUser(Worker idUser) {
+        this.idUser = idUser;
     }
 
 }

@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "service")
@@ -41,34 +39,6 @@ public class Service {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_category", nullable = false)
     private Category idCategory;
-
-    @ManyToMany
-    @JoinTable(name = "contains",
-            joinColumns = @JoinColumn(name = "id_service"),
-            inverseJoinColumns = @JoinColumn(name = "id_appointment"))
-    private Set<Appointment> appointments = new LinkedHashSet<>();
-
-    @ManyToMany
-    @JoinTable(name = "does",
-            joinColumns = @JoinColumn(name = "id_service"),
-            inverseJoinColumns = @JoinColumn(name = "id_worker"))
-    private Set<Worker> workers = new LinkedHashSet<>();
-
-    public Set<Worker> getWorkers() {
-        return workers;
-    }
-
-    public void setWorkers(Set<Worker> workers) {
-        this.workers = workers;
-    }
-
-    public Set<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(Set<Appointment> appointments) {
-        this.appointments = appointments;
-    }
 
     public Integer getId() {
         return id;

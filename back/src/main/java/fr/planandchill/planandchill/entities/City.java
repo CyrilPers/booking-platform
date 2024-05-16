@@ -4,9 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "city")
 public class City {
@@ -28,20 +25,6 @@ public class City {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "insee_country", nullable = false)
     private Country inseeCountry;
-
-    @ManyToMany
-    @JoinTable(name = "has",
-            joinColumns = @JoinColumn(name = "insee_city"),
-            inverseJoinColumns = @JoinColumn(name = "code"))
-    private Set<PostalCode> postalCodes = new LinkedHashSet<>();
-
-    public Set<PostalCode> getPostalCodes() {
-        return postalCodes;
-    }
-
-    public void setPostalCodes(Set<PostalCode> postalCodes) {
-        this.postalCodes = postalCodes;
-    }
 
     public Integer getId() {
         return id;

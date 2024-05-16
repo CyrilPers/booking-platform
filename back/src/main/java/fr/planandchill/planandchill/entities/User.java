@@ -1,81 +1,45 @@
 package fr.planandchill.planandchill.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 @Entity
 @Table(name = "user")
-public class User {
+public abstract class User {
     @Id
     @Column(name = "id_user", nullable = false)
-    private Integer id;
+    protected Integer id;
 
     @Size(max = 50)
     @NotNull
     @Column(name = "firstName", nullable = false, length = 50)
-    private String firstName;
+    protected String firstName;
 
     @Size(max = 50)
     @NotNull
     @Column(name = "lastName", nullable = false, length = 50)
-    private String lastName;
+    protected String lastName;
 
     @Column(name = "enabled")
-    private Boolean enabled;
+    protected Boolean enabled;
 
     @Size(max = 250)
     @NotNull
     @Column(name = "email", nullable = false, length = 250)
-    private String email;
+    protected String email;
 
     @Size(max = 250)
     @NotNull
     @Column(name = "password", nullable = false, length = 250)
-    private String password;
+    protected String password;
 
     @Size(max = 50)
     @Column(name = "phoneNumber", length = 50)
-    private String phoneNumber;
-
-    @ManyToMany
-    @JoinTable(name = "asso_23",
-            joinColumns = @JoinColumn(name = "id_user"),
-            inverseJoinColumns = @JoinColumn(name = "id_address"))
-    private Set<Address> addresses = new LinkedHashSet<>();
-
-    @OneToOne(mappedBy = "idUser")
-    private Customer customer;
-
-    @OneToOne(mappedBy = "idUser")
-    private Worker worker;
-
-    public Worker getWorker() {
-        return worker;
-    }
-
-    public void setWorker(Worker worker) {
-        this.worker = worker;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Set<Address> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(Set<Address> addresses) {
-        this.addresses = addresses;
-    }
+    protected String phoneNumber;
 
     public Integer getId() {
         return id;
