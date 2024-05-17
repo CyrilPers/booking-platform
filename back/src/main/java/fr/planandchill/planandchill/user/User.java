@@ -149,4 +149,6 @@ public class User implements UserDetails {
         return false;
     }
 
+    public String fullName() { return firstName + " " + lastName;}
+
 }

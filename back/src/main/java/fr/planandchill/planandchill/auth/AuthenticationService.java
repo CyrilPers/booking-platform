@@ -1,41 +1,53 @@
 package fr.planandchill.planandchill.auth;
 
 import fr.planandchill.planandchill.email.EmailService;
-import fr.planandchill.planandchill.entities.Customer;
+import fr.planandchill.planandchill.email.EmailTemplateName;
 import fr.planandchill.planandchill.user.Token;
 import fr.planandchill.planandchill.user.TokenRepository;
 import fr.planandchill.planandchill.user.User;
 import fr.planandchill.planandchill.user.UserRepository;
+import jakarta.mail.MessagingException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Service
 public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
-    private final EmailService emailServicec;
+    private final EmailService emailService;
 
-    public AuthenticationService(PasswordEncoder passwordEncoder, UserRepository userRepository, TokenRepository tokenRepository, EmailService emailServicec) {
+    private String activationUrl;
+
+    public AuthenticationService(PasswordEncoder passwordEncoder, UserRepository userRepository, TokenRepository tokenRepository, EmailService emailService, @Value("${mailing.activation.url}") String activationUrl) {
         this.passwordEncoder = passwordEncoder;
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
-        this.emailServicec = emailServicec;
+        this.emailService = emailService;
+        this.activationUrl = activationUrl;
     }
 
-    public void register(RegistrationRequest request) {
+    public void register(RegistrationRequest request) throws MessagingException {
         var user = new User(request.getFirstName(), request.getLastName(), false, false, request.getEmail(),passwordEncoder.encode(request.getPassword()), request.getPhoneNumber());
         userRepository.save(user);
         sendValidationEmail(user);
     }
 
-    private void sendValidationEmail(User user) {
+    private void sendValidationEmail(User user) throws MessagingException {
         var newToken = generateAndSaveActivation(user);
-        // send email
+        emailService.sendEmail(
+                user.getEmail(),
+                user.fullName(),
+                EmailTemplateName.ACTIVATE_ACCOUNT,
+                activationUrl,
+                newToken,
+                "Account_activation"
+
+        );
 
     }
 
