@@ -1,5 +1,6 @@
 package fr.planandchill.planandchill.entities;
 
+import fr.planandchill.planandchill.user.User;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 

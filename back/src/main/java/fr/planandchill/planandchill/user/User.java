@@ -1,4 +1,4 @@
-package fr.planandchill.planandchill.entities;
+package fr.planandchill.planandchill.user;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,10 +6,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
-public abstract class User {
+public class User implements UserDetails {
     @Id
     @Column(name = "id_user", nullable = false)
     protected Integer id;
@@ -27,6 +32,9 @@ public abstract class User {
     @Column(name = "enabled")
     protected Boolean enabled;
 
+    @Column(name = "accountLocked")
+    protected Boolean accountLocked;
+
     @Size(max = 250)
     @NotNull
     @Column(name = "email", nullable = false, length = 250)
@@ -40,6 +48,20 @@ public abstract class User {
     @Size(max = 50)
     @Column(name = "phoneNumber", length = 50)
     protected String phoneNumber;
+
+    public User(String firstName, String lastName, Boolean enabled, Boolean accountLocked, String email, String password, String phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.enabled = enabled;
+        this.accountLocked = accountLocked;
+        this.email = email;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public User() {
+
+    }
 
     public Integer getId() {
         return id;
@@ -95,6 +117,36 @@ public abstract class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of();
+    }
+
+    @Override
+    public String getUsername() {
+        return email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 
 }
