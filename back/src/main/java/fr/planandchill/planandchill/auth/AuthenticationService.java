@@ -46,7 +46,6 @@ public class AuthenticationService {
                 activationUrl,
                 newToken,
                 "Account_activation"
-
         );
 
     }

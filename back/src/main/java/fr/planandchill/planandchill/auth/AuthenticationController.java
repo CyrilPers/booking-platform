@@ -27,4 +27,11 @@ public class AuthenticationController {
         service.register(request);
         return ResponseEntity.accepted().build();
     }
+
+    @GetMapping("/test")
+    @ResponseStatus(HttpStatus.ACCEPTED)
+    public String test() {
+        logger.info("TEST");
+        return "Controller is working!";
+    }
 }
